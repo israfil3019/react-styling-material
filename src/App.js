@@ -1,12 +1,14 @@
 import "./App.css";
+// import StyledComponents from './components/styled-comp/index'
 import Buttons from "./components/material-ui/buttons/Buttons";
 import CheckBoxComp from "./components/material-ui/checkbox/CheckBoxComp";
 import StyledButton from "./components/material-ui/styled-button/StyledButton";
 import TextFieldComp from "./components/material-ui/text-field/TextFieldComp";
+import Typography from "./components/material-ui/typography/TypographyComp";
+import Wrapper from "./components/material-ui/wrapper/Wrapper";
+import Cards from "./components/material-ui/cards/Cards";
 import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import { orange, green } from "@material-ui/core/colors";
-import TypographyComp from "./components/material-ui/typography/TypographyComp";
-// import StyledComponents from "./components/styled-comp/index";
 
 const theme = createMuiTheme({
   typography: {
@@ -20,10 +22,10 @@ const theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: orange[900],
+      main: orange[400],
     },
     secondary: {
-      main: green[500],
+      main: green[400],
     },
   },
 });
@@ -31,18 +33,20 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <div className="Header">
-          {/* <StyledComponents /> */}
-          <TypographyComp />
-          <StyledButton />
-          <TextFieldComp />
-          <CheckBoxComp />
-          <Buttons />
+      <Wrapper>
+        <div className="App">
+          <header className="Header">
+            <Typography />
+            <StyledButton />
+            <Cards />
+            <TextFieldComp />
+            <CheckBoxComp />
+            <Buttons />
+            {/* <StyledComponents /> */}
+          </header>
         </div>
-      </div>
+      </Wrapper>
     </ThemeProvider>
   );
 }
-
 export default App;
